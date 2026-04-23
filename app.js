@@ -15,9 +15,13 @@ form.addEventListener("submit", async (e) => {
 
   try {
     await fetch(url, {
-      method: "POST",
-      body: JSON.stringify(data)
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+    
 
     message.textContent = "Gracias por tu opinión 💖";
     form.reset();
