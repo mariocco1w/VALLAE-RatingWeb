@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback Dulce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Gracias por tu compra 💖</h1>
+    <p>Tu opinión nos ayuda a mejorar</p>
+
+    <form id="feedbackForm">
+      
+      <label>Calificación:</label>
+      <select id="rating" required>
+        <option value="">Selecciona</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="1">⭐</option>
+      </select>
+
+      <label>¿Qué te pareció?</label>
+      <textarea id="comment" required></textarea>
+
+      <label>¿Qué te gustaría ver en el futuro?</label>
+      <textarea id="suggestion"></textarea>
+
+      <label>Tu nombre o IG (opcional)</label>
+      <input type="text" id="user">
+
+      <button type="submit">Enviar 💌</button>
+
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
