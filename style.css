@@ -14,10 +14,17 @@ body {
   text-align: center;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .logo-container img {
   width: 120px;
+  max-width: 40%;
+  height: auto;
   border-radius: 50%;
-  margin-bottom: 15px;
 }
 
 h1 {
