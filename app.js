@@ -1,27 +1,22 @@
 const form = document.getElementById("feedbackForm");
 const message = document.getElementById("message");
 
-const url = "https://script.google.com/macros/s/AKfycbxlMMToZAOwpCFiKxiXH9cVfp_rO6X3CCW7xOYkMZ7_ZjqKmllf0V1aEdevo0j8xLebMw/exec";
+const url = "https://script.google.com/macros/s/AKfycbyDzvOQUBCViMZ18I_xIwMk8l2wYxwnePzo4KotUbsty4dyvXB6twmNyg2woGY1XABf4Q/exec";
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = {
-    rating: document.getElementById("rating").value,
-    comment: document.getElementById("comment").value,
-    suggestion: document.getElementById("suggestion").value,
-    user: document.getElementById("user").value
-  };
+  const data = new URLSearchParams();
+  data.append("rating", document.getElementById("rating").value);
+  data.append("comment", document.getElementById("comment").value);
+  data.append("suggestion", document.getElementById("suggestion").value);
+  data.append("user", document.getElementById("user").value);
 
   try {
     await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-    
+      method: "POST",
+      body: data
+    });
 
     message.textContent = "Gracias por tu opinión 💖";
     form.reset();
